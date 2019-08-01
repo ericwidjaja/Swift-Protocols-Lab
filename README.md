@@ -22,9 +22,41 @@ a. Create a `Human` class with two properties:
 - `age` of type Int.
 
 Then create an initializer for the class and create two `Human` instances.
+```swift
+class Human {
+    var name: String
+    var age: Int
+    init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+    }
+}
 
+var eric = Human(name: "Eric", age: 41)
+var edwin = Human(name: "Edwin", age: 38)
+```
 b. Make the `Human` class adopt the CustomStringConvertible protocol. Then print both of your previously initialized
 `Human` objects.
+
+```swift
+class Human : CustomStringConvertible {
+    var description: String {
+    return "My name is \(name), my age is \(age)"
+    }
+    var name: String
+    var age: Int
+    init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+    }
+}
+var eric = Human(name: "Eric", age: 40)
+var edwin = Human(name: "Edwin", age: 37)
+
+print(eric)
+print(edwin)
+```
+
 
 c. Make the `Human` class adopt the Equatable protocol. Two instances of `Human` should be considered equal
 if their names and ages are identical to one another. Print the result of a boolean expression
