@@ -254,23 +254,15 @@ class Dog: Communication {
 
 class Cat: Communication {
     var message: String {return "meeow"}
-
 }
 
 class Cow: Communication {
     var message: String {return "mooo"}
-
 }
-let b = Cow()
-let c = Cat()
-let d = Dog()
 
-let array: [Communication] = [b,c,d]
+let array: [Communication] = [Cow, Cat, Dog]
 for a in array {
     print(a.message)
-    if let _ = a as? Cow {
-        print("It's cow. Holy COW \n")
-    }
 }
 ```
 ## Question 6
